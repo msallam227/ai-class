@@ -66,7 +66,10 @@ app.get('/submissions', async (req, res) => {
 });
 
 // Serve the built React frontend
-const distPath = path.join(__dirname, '../dist');
+const distPath = path.join(process.cwd(), 'dist');
+console.log('__dirname:', __dirname);
+console.log('process.cwd():', process.cwd());
+console.log('distPath:', distPath);
 app.use(express.static(distPath));
 
 // SPA fallback — send index.html for any non-API route
