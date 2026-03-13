@@ -48,7 +48,7 @@ function SignupForm() {
     <form onSubmit={async e => {
             e.preventDefault();
             try {
-              await fetch('http://localhost:3002/signup', {
+              await fetch('/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),

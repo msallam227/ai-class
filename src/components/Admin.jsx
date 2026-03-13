@@ -11,7 +11,7 @@ export default function Admin() {
     if (!authed) return;
     setLoading(true);
     setError(null);
-    fetch('http://localhost:3002/submissions', {
+    fetch('/submissions', {
       headers: { 'x-admin-password': password },
     })
       .then(r => {

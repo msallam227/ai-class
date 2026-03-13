@@ -6,5 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    proxy: {
+      '/signup': 'http://localhost:3002',
+      '/submissions': 'http://localhost:3002',
+    },
   },
 })
