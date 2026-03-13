@@ -5,8 +5,8 @@ services:
     region: oregon
     plan: free
     rootDir: .
-    buildCommand: npm install --include=dev && npm run build
-    startCommand: node server/index.cjs
+    buildCommand: npm install --include=dev
+    startCommand: npm run build && node server/index.cjs
     envVars:
       - key: NODE_ENV
         value: production
