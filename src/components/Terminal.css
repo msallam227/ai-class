@@ -1,0 +1,85 @@
+.terminal-wrap {
+  width: 100%;
+  max-width: 620px;
+  filter: drop-shadow(0 30px 60px rgba(91, 84, 250, 0.25));
+}
+
+.terminal {
+  background: #0d0c13;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+}
+
+.t-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.t-dots { display: flex; gap: 6px; }
+.t-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.t-dot.red    { background: #ff5f56; }
+.t-dot.yellow { background: #ffbd2e; }
+.t-dot.green  { background: #27c93f; }
+
+.t-title {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.t-body {
+  padding: 1.25rem 1.5rem;
+  min-height: 340px;
+  max-height: 340px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  scrollbar-width: none;
+}
+.t-body::-webkit-scrollbar { display: none; }
+
+.t-line {
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.t-line--cmd {
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+.t-line--sys { color: rgba(255,255,255,0.35); }
+.t-line--ok  { color: #27c93f; }
+
+.t-prompt {
+  color: #D285FF;
+  flex-shrink: 0;
+}
+
+.t-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #D285FF;
+  margin-left: 1px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

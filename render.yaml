@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-course-backend
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: .
+    buildCommand: npm install
+    startCommand: node server/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: ADMIN_PASS
+        sync: false
+      - key: ALLOWED_ORIGIN
+        sync: false
